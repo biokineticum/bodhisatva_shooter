@@ -4,30 +4,17 @@ A side-scrolling shooter that mixes **head-camera motion** with **keyboard** con
 
 ## How to run
 
-**Double-click `play.bat`.** That is how you start the game.
+1. **Rozpakuj ZIP na dysk** (Pulpit, Dokumenty, itd.). Nie odpalaj gry prosto z archiwum.
+2. Wejdź do folderu `bodhisatva_shooter-main` (albo `bodhisatva_shooter`).
+3. **Kliknij `play.bat`.**
 
-`play.bat` looks for the desktop app and launches it:
+To jedyny sposób uruchomienia. `play.bat`:
 
-1. `desktop\bin\Release\net10.0-windows\win-x64\Bodhisattva.exe`
-2. the published copy next to it
-3. `Bodhisattva.exe` in the game folder
+- odpala aplikację pulpitu z kamerą, jeśli `Bodhisattva.exe` już jest
+- przy pierwszym starcie ze źródeł **sam buduje grę** (trzeba [.NET 10 SDK](https://dotnet.microsoft.com/download) i internet)
+- gdy nie ma `.NET`, odpala wersję w przeglądarce (klawiatura; kamera nie działa)
 
-The desktop app is the real way to play — camera tracking works there.
-
-If no `.exe` is found, `play.bat` opens `http://127.0.0.1:8080/` in the browser instead. Camera does **not** work from a raw `index.html` file.
-
-### First time after a clone
-
-The `.exe` is not in this repo. Build it once, then use `play.bat`:
-
-```bat
-cd desktop
-dotnet build -c Release
-cd ..
-play.bat
-```
-
-You need [.NET 10](https://dotnet.microsoft.com/download) and a webcam for head tracking.
+Zostaw okno `play.bat` otwarte przy pierwszym budowaniu. Potem gra powinna wystartować sama.
 
 ## Controls
 
@@ -44,12 +31,8 @@ You need [.NET 10](https://dotnet.microsoft.com/download) and a webcam for head 
 
 Keyboard still works while the camera is on.
 
-## Play in the browser (no camera)
+## If play.bat says it cannot find the game
 
-If you only want keyboard play and have no desktop build:
-
-```bat
-python -m http.server 8080
-```
-
-Then open [http://127.0.0.1:8080/](http://127.0.0.1:8080/).
+- Extract the ZIP first. Running files from inside the archive will fail.
+- Install [.NET 10 SDK](https://dotnet.microsoft.com/download), then click `play.bat` again.
+- Camera needs the desktop app, a webcam, and the [WebView2 Runtime](https://developer.microsoft.com/microsoft-edge/webview2/).

@@ -1,0 +1,162 @@
+:root {
+  --gold: #f4d27a;
+  --saffron: #e8b84a;
+  --jade: #3d8f6e;
+  --ink: #120c14;
+  --rose: #2a1520;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  height: 100%;
+  background:
+    radial-gradient(1200px 700px at 50% 20%, #3a1d28 0%, var(--ink) 62%);
+  color: var(--gold);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  overflow: hidden;
+}
+
+#wrap {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 18px;
+}
+
+#frame {
+  position: relative;
+  box-shadow:
+    0 0 0 2px #6a4a28,
+    0 0 0 6px #d4b36a,
+    0 0 0 8px #3a2814,
+    0 30px 80px rgba(0, 0, 0, 0.55);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #000;
+}
+
+canvas {
+  display: block;
+  width: min(1920px, 96vw);
+  height: auto;
+  image-rendering: auto;
+  background: #000;
+}
+
+#hint {
+  font-size: 15px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #cbb48a;
+  opacity: 0.85;
+}
+
+#hint kbd {
+  font-family: "Cinzel", serif;
+  color: var(--saffron);
+  padding: 0 4px;
+}
+
+#cam-bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 40;
+  padding: 12px 16px 16px;
+  background: linear-gradient(transparent, rgba(10, 6, 8, 0.94) 28%);
+  text-align: center;
+  pointer-events: none;
+}
+
+#cam-bar p {
+  margin: 0 0 10px;
+  color: #e8d8b0;
+  font-size: 16px;
+}
+
+#cam-bar b { color: #f4d27a; }
+
+.cam-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#cam-bar button {
+  font-family: Cinzel, serif;
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  padding: 12px 18px;
+  min-width: 260px;
+  cursor: pointer;
+  border: 1px solid #d4b36a;
+  background: #3a2814;
+  color: #fff4d0;
+  pointer-events: auto;
+}
+
+#cam-bar button#btn-cam-start {
+  background: #2a3a20;
+}
+
+#cam-bar button#btn-cam-play {
+  background: #245a32;
+  min-width: 220px;
+  font-size: 17px;
+}
+
+#cam-bar[hidden] { display: none !important; }
+
+#headcam {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+#boot {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: #120c14;
+  color: var(--gold);
+  font-family: "Cinzel", serif;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+html.desktop, html.desktop body {
+  background: #120c14;
+}
+
+html.desktop #wrap {
+  padding: 0;
+  gap: 0;
+  min-height: 100vh;
+}
+
+html.desktop #frame {
+  box-shadow: none;
+  border-radius: 0;
+}
+
+html.desktop canvas {
+  width: auto;
+  height: auto;
+  max-width: 100vw;
+  max-height: calc(100vh - 8px);
+  object-fit: contain;
+}
+
+html.desktop #hint {
+  display: none;
+}

@@ -1,0 +1,35 @@
+# .NET build output
+desktop/bin/
+desktop/obj/
+**/bin/
+**/obj/
+*.user
+*.suo
+.vs/
+
+# Root copies produced by the desktop build
+/Bodhisattva.exe
+/Bodhisattva.dll
+/Bodhisattva.pdb
+/Bodhisattva.deps.json
+/Bodhisattva.runtimeconfig.json
+/OpenCvSharp.dll
+/OpenCvSharpExtern.dll
+/opencv_videoio_ffmpeg4100_64.dll
+/Microsoft.Web.WebView2.Core.dll
+/Microsoft.Web.WebView2.WinForms.dll
+/Microsoft.Web.WebView2.Wpf.dll
+/WebView2Loader.dll
+/runtimes/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# OS / editor
+Thumbs.db
+Desktop.ini
+.DS_Store
+*.swp
+.idea/

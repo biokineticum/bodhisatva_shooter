@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bodhisattva — Lotus Path</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="wrap">
+    <div id="frame">
+      <canvas id="game" width="1280" height="720" tabindex="0"></canvas>
+      <div id="cam-bar" hidden>
+        <p>Pochyl głowę w lewo / prawo. Unieś głowę, żeby skoczyć. Klawiatura też działa.</p>
+        <div class="cam-actions">
+          <button type="button" id="btn-cam-play" tabindex="-1">Zacznij grę</button>
+          <button type="button" id="btn-cam-start" tabindex="-1">Włącz kamerę</button>
+          <button type="button" id="btn-cam-settings" tabindex="-1">Ustawienia kamery</button>
+        </div>
+      </div>
+      <div id="boot">Opening the path…</div>
+    <video id="headcam" playsinline muted autoplay></video>
+    <p id="hint"><kbd>Enter</kbd> camera check &nbsp; lean to move &nbsp; <kbd>Space</kbd> jump &nbsp; <kbd>A</kbd> shoot &nbsp; raise head to aim up</p>
+  </div>
+  <script>
+    if (location.hostname === "bodhisattva.local") {
+      document.documentElement.classList.add("desktop");
+    }
+  </script>
+  <script src="js/game.js"></script>
+  <script type="module" src="js/headcam.js"></script>
+</body>
+</html>

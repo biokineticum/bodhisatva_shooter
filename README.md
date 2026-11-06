@@ -1,38 +1,52 @@
 # Bodhisattva Shooter
 
-A side-scrolling shooter that mixes **head-camera motion** with **keyboard** controls. Lean to move, raise your head to jump or aim up, and use the keyboard to shoot.
+**Side-scrolling shooter mixing head-camera motion with keyboard** — lean to move, raise your head to jump / aim, shoot with keys.
 
-## How to run
+A playful motion-capture game for **neck and upper-body movement** between work sessions. For physios, coaches and makers exploring camera-based exergames.
 
-1. **Rozpakuj ZIP na dysk** (Pulpit, Dokumenty, itd.). Nie odpalaj gry prosto z archiwum.
-2. Wejdź do folderu `bodhisatva_shooter-main` (albo `bodhisatva_shooter`).
-3. **Kliknij `play.bat`.**
+## Features
 
-To jedyny sposób uruchomienia. `play.bat`:
+- Hybrid **camera + keyboard** controls
+- Desktop app with webcam head tracking; browser fallback without camera
+- Windows one-click launch via `play.bat`
 
-- odpala aplikację pulpitu z kamerą, jeśli `Bodhisattva.exe` już jest
-- przy pierwszym starcie ze źródeł **sam buduje grę** (trzeba [.NET 10 SDK](https://dotnet.microsoft.com/download) i internet)
-- gdy nie ma `.NET`, odpala wersję w przeglądarce (klawiatura; kamera nie działa)
+## Requirements
 
-Zostaw okno `play.bat` otwarte przy pierwszym budowaniu. Potem gra powinna wystartować sama.
+- Webcam + [WebView2 Runtime](https://developer.microsoft.com/microsoft-edge/webview2/) for camera mode
+- [.NET SDK](https://dotnet.microsoft.com/download) to build from source
+
+## Quick start
+
+1. Extract / clone the folder to disk (do not run from inside a ZIP).
+2. Open the project folder and double-click **`play.bat`**.
+
+`play.bat` launches `Bodhisattva.exe` if present, otherwise builds from source. Without .NET it opens the browser version (keyboard only).
 
 ## Controls
 
 | Action | Keyboard | Camera |
 | --- | --- | --- |
 | Start / camera check | `Enter` | — |
-| Move | Left / Right arrows | Lean left / right |
-| Jump | `Space` | Raise your head |
-| Crouch | Down arrow | — |
+| Move | ← / → | Lean left / right |
+| Jump | `Space` | Raise head |
+| Crouch | ↓ | — |
 | Shoot | `A` | — |
 | Super | `S` | — |
-| Aim | Up / Down arrows | Raise or lower your head |
+| Aim | ↑ / ↓ | Raise or lower head |
 | Camera settings | `F1` | — |
 
 Keyboard still works while the camera is on.
 
-## If play.bat says it cannot find the game
+### If `play.bat` cannot find the game
 
-- Extract the ZIP first. Running files from inside the archive will fail.
-- Install [.NET 10 SDK](https://dotnet.microsoft.com/download), then click `play.bat` again.
-- Camera needs the desktop app, a webcam, and the [WebView2 Runtime](https://developer.microsoft.com/microsoft-edge/webview2/).
+- Extract the ZIP first
+- Install the .NET SDK, then run `play.bat` again
+- Camera needs the desktop app, a webcam, and WebView2
+
+---
+
+## Author
+
+**Dariusz Mosler** (Biokineticum) — physiotherapy, biomechanics, sports science  
+🌐 [biokineticum.com](https://biokineticum.com) · 📰 [Substack](https://biokineticum.substack.com) · 𝕏 [@Biokineticum](https://x.com/Biokineticum)
+
